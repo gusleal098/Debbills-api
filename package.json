@@ -1,0 +1,25 @@
+{
+  "name": "devbills-api",
+  "version": "1.0.0",
+  "description": "Devbills API - Controle sua vida financeira pessoal de forma rápida e fácil",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch ./src/server.ts"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Gustavo Leal",
+    "email": "gustavoleal098@gmail.com",
+    "url": "https://github.com/gusleal098"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
