@@ -3,12 +3,17 @@
 // Toda definição de tipo de bibliotecas externas, o @types/nome da biblioteca vem antes
 // Na documentação da biblioteca, se tiver o 'DT' ao lado do nome, é porque ela tem definições de tipos
 
+import 'dotenv/config'
 import express, { json } from 'express' // npm i -D @types/express
 import { routes } from './routes'
+import { setupMongo } from './database'
 
-const app = express()
+setupMongo().then(() => {
+    const app = express()
 
-app.use(json())
-app.use(routes)
+    app.use(json())
+    app.use(routes)
 
-app.listen(3333, () => console.log('🚀 App is running at port 3333!'))
+    app.listen(3333, () => console.log('🚀 App is running at port 3333!'))
+})
+

@@ -1,3 +1,4 @@
+# docker-compose.yml
 version: '3'
 
 services:
@@ -22,10 +23,13 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/home/app
+      - /home/app/node_modules
     ports:
-      - '5050:5050'
+      - '3333:3333'
     networks:
       - local
+    env_file:
+      - .env
 
 networks:
   local:
