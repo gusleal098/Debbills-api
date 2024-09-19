@@ -1,4 +1,3 @@
-# docker-compose.yml
 version: '3'
 
 services:
@@ -7,7 +6,7 @@ services:
     restart: always
     image: mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: 'devbills'
+      MONGO_INITDB_ROOT_USERNAME: 'devbills' # se eu passar com "-" o yml entende que é um array
       MONGO_INITDB_ROOT_PASSWORD: 'pass123'
     ports:
       - '27017:27017'
@@ -23,13 +22,10 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/home/app
-      - /home/app/node_modules
     ports:
       - '3333:3333'
     networks:
       - local
-    env_file:
-      - .env
 
 networks:
   local:

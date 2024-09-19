@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 export async function setupMongo(): Promise<void> {
     try {
-        if(mongoose.connection.readyState === 1) {
+        if (mongoose.connection.readyState === 1) {
             return
         }
 
@@ -10,6 +10,6 @@ export async function setupMongo(): Promise<void> {
         await mongoose.connect(process.env.MONGO_URL as string)
         console.log('✅ DB Connected!')
     } catch {
-        throw new Error('❌ Db not connected.')
+        throw new Error('❌ DB not connected.')
     }
 }
