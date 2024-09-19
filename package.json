@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
+    "esbuild": "^0.23.1",
     "esbuild-wasm": "^0.23.1",
     "express": "^4.21.0",
     "mongoose": "^8.6.3"
